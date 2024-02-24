@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 
 
 const PORT = process.env.PORT || 3000;
+const baseUrl = 'https://newsbytesarshjot.netlify.app/.netlify/functions/api/';
 
 
 
@@ -40,7 +41,7 @@ router.post('/hash', async (req, res) => {
         async () =>
         {
           await url.save();
-          const hashedUrl = `${url.longUrl}/hashes/${hash}`;
+          const hashedUrl = `${baseUrl}${url.longUrl}/hashes/${hash}`;
 
           res.json({ hashedUrl });
         }
@@ -67,7 +68,7 @@ router.post('/hash', async (req, res) => {
  
 });
 
-router.get('hashes/:hash', async (req, res) => {
+router.get('/*/hashes/:hash', async (req, res) => {
   const hash = req.params.hash;
 
   try {
@@ -84,7 +85,7 @@ router.get('hashes/:hash', async (req, res) => {
           url.clicks++;
           await url.save();
           
-          res.redirect(url.longUrl);
+          res.send("Site Visited");
         }
       )
      
@@ -143,17 +144,6 @@ router.get('/urls', async (req, res) => {
 router.get('/try', async (req, res) => {
   res.send('hello')
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 
