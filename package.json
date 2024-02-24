@@ -1,0 +1,21 @@
+{
+  "name": "newsbytes",
+  "version": "1.0.0",
+  "description": "Sample Assessment",
+  "main": "app.js",
+  "scripts": {
+    "build": "netlify deploy --prod"
+  },
+  "author": "Arshjot Singh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.1",
+    "netlify-cli": "^12.7.2",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^2.7.0"
+  }
+}
